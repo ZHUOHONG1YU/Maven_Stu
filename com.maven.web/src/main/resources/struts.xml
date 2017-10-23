@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	
+	<!-- 设置系统参数 -->
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.ui.theme" value="simple"/>
+	
+	<!-- 设置Action -->
+	<package name="com.stu" extends="struts-default">
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="stuAction_*" method="{1}" class="stuAction">
+			<result name="addstu">addStu.jsp</result>
+			<result name="toaddStu" type="redirectAction">stuAction_addStu?msg=${msg}</result>
+			<result name="input">showList.jsp</result>
+			<result name="main">updateStu.jsp</result>
+			<result name="tomain" type="redirectAction">stuAction_findStuList?msg=${msg}</result>
+			<result name="tomain" type="redirectAction">stuAction_findStuList?msg=${msg}</result>
+		</action>
+	</package>
+	
+</struts>
+
+
+
+
+
